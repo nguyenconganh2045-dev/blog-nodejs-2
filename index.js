@@ -7,11 +7,24 @@ app.use(morgan('combined'));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.engine('hbs', engine({ extname: '.hbs' }));
+app.engine('hbs', engine({
+    extname: '.hbs',
+    helpers: {
+        dateFormat(value) {
+            const date = new Date(value);
+
+            if (Number.isNaN(date.getTime())) {
+                return '';
+            }
+
+            return date.toLocaleDateString('en-GB');
+        },
+    },
+}));
 app.set('view engine', 'hbs');
 app.set('views', './views');
 app.get('/', (req, res) => {
-    res.render('home');
+    res.render('home', { blogs: [] });
 });
 app.get('/about', (req, res) => {
     res.render('about');
