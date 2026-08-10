@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const { engine } = require('express-handlebars');
@@ -9,12 +10,16 @@ const db = require('./config/db');
 
 // Thực thi hàm kết nối
 db.connect();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(morgan('combined'));
 app.use(express.static('public'));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.urlencoded({ extended: true, limit: '8mb' }));
+const methodOverride = require('method-override');
+
+// Ghi đè phương thức HTTP thông qua tham số _method trên URL
+app.use(methodOverride('_method'));
+app.use(express.json({ limit: '8mb' }));
 
 app.engine('hbs', engine({
     extname: '.hbs',

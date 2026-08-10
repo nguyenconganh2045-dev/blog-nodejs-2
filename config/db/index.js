@@ -1,14 +1,27 @@
 const mongoose = require('mongoose');
+const dns = require('dns');
+
+const dnsServers = (process.env.MONGODB_DNS_SERVERS || '8.8.8.8,1.1.1.1')
+    .split(',')
+    .map(server => server.trim())
+    .filter(Boolean);
+
+dns.setServers(dnsServers);
 
 // Tạo một hàm kết nối bất đồng bộ (async/await) để đảm bảo kết nối xong mới chạy tiếp
 async function connect(){
     try {
-        // Chuỗi kết nối trỏ tới máy chủ cục bộ và Database đã tạo ở Buổi 08
-        await mongoose.connect('mongodb://127.0.0.1:27017/blog_education_dev');
+        if (!process.env.MONGODB_URI) {
+            throw new Error('Thiếu biến môi trường MONGODB_URI');
+        }
+
+        await mongoose.connect(process.env.MONGODB_URI, {
+            serverSelectionTimeoutMS: 10000,
+        });
         console.log('✅ Kết nối Database thành công!');
     } catch (error) {
         console.log('❌ Kết nối Database thất bại!');
-        console.log(error);
+        console.log(`${error.name}: ${error.message}`);
     }
 }
 

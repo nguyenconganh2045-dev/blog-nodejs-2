@@ -1,5 +1,20 @@
 const Blog = require('../models/Blog');
 
+function isValidImage(value) {
+    if (!value) return true;
+
+    if (value.startsWith('data:image/')) {
+        return /^data:image\/[a-zA-Z0-9.+-]+;base64,[A-Za-z0-9+/]+={0,2}$/.test(value);
+    }
+
+    try {
+        const imageUrl = new URL(value);
+        return ['http:', 'https:'].includes(imageUrl.protocol);
+    } catch {
+        return false;
+    }
+}
+
 class BlogController{
     // [GET] /blogs/create (Hiển thị form)
     create(req, res, next) {
@@ -14,24 +29,16 @@ class BlogController{
             image: req.body.image?.trim(),
         };
 
-        if (formData.image) {
-            try {
-                const imageUrl = new URL(formData.image);
-
-                if (!['http:', 'https:'].includes(imageUrl.protocol)) {
-                    throw new Error('invalid image URL');
-                }
-            } catch {
-                return res.status(400).render('create', {
-                    error: 'Link hình ảnh phải bắt đầu bằng http:// hoặc https://, không dùng dữ liệu Base64.',
-                    formData,
-                });
-            }
+        if (!isValidImage(formData.image) || formData.image.length > 5 * 1024 * 1024) {
+            return res.status(400).render('create', {
+                error: 'Ảnh phải là URL http/https hoặc Base64 ảnh hợp lệ và không vượt quá 5 MB.',
+                formData,
+            });
         }
 
         // Khởi tạo một đối tượng Blog mới dựa trên dữ liệu form
         const blog = new Blog(formData);
-
+        
         // Lưu vào Database
         blog.save()
             .then(() => {
