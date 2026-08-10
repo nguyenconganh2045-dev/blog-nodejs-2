@@ -1,12 +1,21 @@
 const express = require('express');
-const morgan = require('morgan'); // Khai báo morgan
+const morgan = require('morgan');
 const { engine } = require('express-handlebars');
+const route = require('./routes');
+
 const app = express();
+// Nạp module db (Node.js tự động tìm file index.js trong thư mục db)
+const db = require('./config/db');
+
+// Thực thi hàm kết nối
+db.connect();
 const port = 3000;
-app.use(morgan('combined')); 
+
+app.use(morgan('combined'));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 app.engine('hbs', engine({
     extname: '.hbs',
     helpers: {
@@ -21,27 +30,16 @@ app.engine('hbs', engine({
         },
     },
 }));
+
 app.set('view engine', 'hbs');
 app.set('views', './views');
-app.get('/', (req, res) => {
-    res.render('home', { blogs: [] });
-});
-app.get('/about', (req, res) => {
-    res.render('about');
-});
-app.get('/contact', (req, res) => {
-    res.render('contact');
-});
-app.get('/search', (req, res) => {
-    res.render('search');
-});
-app.get('/blogs/create', (req, res) => {
-    res.render('create');
-});
-app.post('/blogs/create', (req, res) => {
-    console.log("Dữ liệu nhận được từ Form: ", req.body);
-    res.json(req.body);
-});
-app.listen(port, () => {
-    console.log(`Server đang chạy tại http://localhost:${port}`);
-});
+
+route(app);
+
+if (require.main === module) {
+    app.listen(port, () => {
+        console.log(`Server đang chạy tại http://localhost:${port}`);
+    });
+}
+
+module.exports = { app, port };

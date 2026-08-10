@@ -1,20 +1,24 @@
 <div class="mt-4">
     <h3>Đăng bài Blog mới</h3>
-
-    <form method="POST" action="/blogs/create">
+    {{#if error}}
+        <div class="alert alert-danger" role="alert">{{error}}</div>
+    {{/if}}
+    <form method="POST" action="/blogs/store">
         <div class="form-group">
             <label for="name">Tiêu đề bài viết</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Nhập tiêu đề...">
+            <input type="text" class="form-control" id="name" name="name" value="{{formData.name}}" maxlength="255" required>
         </div>
-
         <div class="form-group">
             <label for="description">Mô tả ngắn</label>
-            <input type="text" class="form-control" id="description" name="description" placeholder="Nhập tóm tắt bài viết...">
+            <input type="text" class="form-control" id="description" name="description" value="{{formData.description}}" maxlength="600">
         </div>
-
         <div class="form-group">
-            <label for="content">Nội dung chi tiết</label>
-            <textarea class="form-control" id="content" name="content" rows="5" placeholder="Nhập nội dung..."></textarea>
+            <label for="image">Link hình ảnh</label>
+            <input type="url" class="form-control" id="image" name="image" value="{{formData.image}}" maxlength="2048" placeholder="https://example.com/image.jpg">
+        </div>
+        <div class="form-group">
+            <label for="slug">Đường dẫn tĩnh (Slug)</label>
+            <input type="text" class="form-control" id="slug" name="slug" value="{{formData.slug}}" maxlength="255" placeholder="VD: bai-viet-so-1">
         </div>
 
         <button type="submit" class="btn btn-primary mt-2">Đăng bài</button>
