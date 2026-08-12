@@ -26,10 +26,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nguyenconganh2045-dev/blog-nodejs.git"
+    "url": "git+https://github.com/nguyenconganh2045-dev/blog-nodejs2.git"
   },
   "bugs": {
-    "url": "https://github.com/nguyenconganh2045-dev/blog-nodejs/issues"
+    "url": "https://github.com/nguyenconganh2045-dev/blog-nodejs2/issues"
   },
-  "homepage": "https://github.com/nguyenconganh2045-dev/blog-nodejs#readme"
+  "homepage": "https://github.com/nguyenconganh2045-dev/blog-nodejs2#readme"
 }
