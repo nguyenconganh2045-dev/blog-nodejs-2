@@ -11,7 +11,7 @@ function setTheme(theme) {
     themeButtons.forEach((button) => {
         button.classList.toggle('dark', isDark);
         button.classList.toggle('light', !isDark);
-        button.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+        button.setAttribute('aria-label', isDark ? 'Chuyển sang giao diện sáng' : 'Chuyển sang giao diện tối');
     });
 
     localStorage.setItem('theme', theme);
