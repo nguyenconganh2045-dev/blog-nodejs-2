@@ -664,25 +664,18 @@ header .btn-group {
 
    .hero .pattern-bg {
     position: absolute;
-
     top: 50%;
-
     transform: translateY(-50%);
 
     width: 100%;
-
     height: 200px;
 
     background: url(/img/img/pattern.png);
-
     background-size: contain;
-
     background-repeat: no-repeat;
-
     background-position: center;
 
     opacity: 0.2;
-
     z-index: 1;
 }
 
