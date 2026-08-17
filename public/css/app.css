@@ -1,3 +1,8 @@
+@charset "UTF-8";
+/*-----------------------------------*\
+    #FONT PIXEL
+\*-----------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 /*-----------------------------------*\ 
   #style.css
 \*-----------------------------------*/
@@ -359,9 +364,9 @@ header .btn-group {
   overflow: hidden;
 }
 
-/* =========================
-   PATTERN BAO QUANH HERO
-   ========================= */
+/*-----------------------------------*\
+    #PATTERN CREEPER
+\*-----------------------------------*/
 .hero .pattern-bg {
   position: absolute;
   top: 50%;
@@ -378,9 +383,9 @@ header .btn-group {
   pointer-events: none;
 }
 
-/* =========================
-   CONTAINER
-   ========================= */
+/*-----------------------------------*\
+    #CONTAINER
+\*-----------------------------------*/
 .hero .container {
   position: relative;
   z-index: 2;
@@ -393,92 +398,108 @@ header .btn-group {
   padding: 0 30px;
 }
 
-/* =========================
-   PHAN CHU BEN TRAI
-   ========================= */
+/*-----------------------------------*\
+    #PHẦN CHỮ
+\*-----------------------------------*/
 .hero .left {
   max-width: 650px;
 }
 
-/* Tieu de */
+/*-----------------------------------*\
+    #TIÊU ĐỀ
+\*-----------------------------------*/
 .hero .h1,
 .hero-title {
-  margin-bottom: 1rem;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1.35;
+  margin: 0 0 20px 0;
+  font-family: "Press Start 2P", monospace;
+  font-size: 32px;
+  font-weight: normal;
+  line-height: 1.8;
+  letter-spacing: 1px;
   color: var(--foreground-primary);
 }
 
-/* Ten */
+/* Tên */
 .hero b,
 .hero-title span {
-  color: var(--accent);
-  font-weight: inherit;
-}
-
-.hero-title span {
   display: block;
-  margin-top: 5px;
+  margin-top: 10px;
+  font-family: "Press Start 2P", monospace;
+  color: var(--accent);
+  font-weight: normal;
 }
 
-/* Tieu de phu */
+/*-----------------------------------*\
+    #TIÊU ĐỀ PHỤ
+\*-----------------------------------*/
 .hero .h3,
 .hero-subtitle {
-  margin-bottom: 2rem;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 1.5;
+  margin: 0 0 25px 0;
+  font-family: "Press Start 2P", monospace;
+  font-size: 23px;
+  font-weight: normal;
+  line-height: 1.8;
+  letter-spacing: 1px;
   color: var(--foreground-primary);
 }
 
-/* Mo ta */
+/*-----------------------------------*\
+    #MÔ TẢ
+\*-----------------------------------*/
 .hero-description {
-  margin-bottom: 30px;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.6;
+  margin: 0 0 30px 0;
+  font-family: "Press Start 2P", monospace;
+  font-size: 11px;
+  font-weight: normal;
+  line-height: 2;
+  letter-spacing: 0.5px;
   color: var(--foreground-secondary);
 }
 
-/* =========================
-   BUTTON
-   ========================= */
+/*-----------------------------------*\
+    #BUTTON
+\*-----------------------------------*/
 .hero .btn-group {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   gap: 15px;
-  text-align: center;
 }
 
+/* Button chung */
 .hero .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-width: 160px;
-  padding: 13px 25px;
+  padding: 13px 22px;
   border-radius: 30px;
-  font-size: 16px;
-  font-weight: 600;
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  font-weight: normal;
+  line-height: 1.5;
   text-decoration: none;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-/* Nut lien he */
+/*-----------------------------------*\
+    #BUTTON LIÊN HỆ
+\*-----------------------------------*/
 .hero .btn-primary {
-  color: #fff;
+  color: #ffffff;
   background: var(--accent);
   border: 2px solid var(--accent);
 }
 
 .hero .btn-primary:hover {
   opacity: 0.85;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
-/* Nut gioi thieu */
+/*-----------------------------------*\
+    #BUTTON GIỚI THIỆU
+\*-----------------------------------*/
 .hero .btn-outline {
   color: var(--foreground-secondary);
   background: transparent;
@@ -487,12 +508,12 @@ header .btn-group {
 
 .hero .btn-outline:hover {
   background: #f1f4f8;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
-/* =========================
-   PHAN HINH BEN PHAI
-   ========================= */
+/*-----------------------------------*\
+    #PHẦN HÌNH
+\*-----------------------------------*/
 .hero .right {
   position: relative;
   display: flex;
@@ -501,7 +522,9 @@ header .btn-group {
   min-height: 450px;
 }
 
-/* Khung anh */
+/*-----------------------------------*\
+    #KHUNG ẢNH
+\*-----------------------------------*/
 .hero .img-box {
   position: relative;
   width: 420px;
@@ -512,9 +535,9 @@ header .btn-group {
   z-index: 2;
 }
 
-/* =========================
-   ANH MINECRAFT HINH TRON
-   ========================= */
+/*-----------------------------------*\
+    #ẢNH MINECRAFT HÌNH TRÒN
+\*-----------------------------------*/
 .hero-img {
   display: block;
   width: 420px;
@@ -526,21 +549,33 @@ header .btn-group {
   z-index: 2;
 }
 
-/* =========================
-   BO PHAN KHOANH / SHAPE CU
-   ========================= */
+/*-----------------------------------*\
+    #BỎ PHẦN KHOANH TRÒN CŨ
+\*-----------------------------------*/
+/*
+   Xóa toàn bộ hình shape cũ.
+   Không còn đường khoanh màu đen.
+*/
 .hero .shape,
 .hero .shape-1,
 .hero .shape-2 {
   display: none !important;
 }
 
-/* =========================
-   TABLET
-   ========================= */
+/*-----------------------------------*\
+    #RESPONSIVE TABLET
+\*-----------------------------------*/
 @media (max-width: 1000px) {
   .hero .container {
     gap: 30px;
+  }
+  .hero .h1,
+  .hero-title {
+    font-size: 27px;
+  }
+  .hero .h3,
+  .hero-subtitle {
+    font-size: 19px;
   }
   .hero .img-box {
     width: 350px;
@@ -550,18 +585,10 @@ header .btn-group {
     width: 350px;
     height: 350px;
   }
-  .hero .h1,
-  .hero-title {
-    font-size: 42px;
-  }
-  .hero .h3,
-  .hero-subtitle {
-    font-size: 34px;
-  }
 }
-/* =========================
-   MOBILE
-   ========================= */
+/*-----------------------------------*\
+    #RESPONSIVE MOBILE
+\*-----------------------------------*/
 @media (max-width: 750px) {
   .hero {
     padding-top: 3rem;
@@ -592,19 +619,27 @@ header .btn-group {
   }
   .hero .h1,
   .hero-title {
-    font-size: 36px;
+    font-size: 22px;
+    line-height: 1.8;
   }
   .hero .h3,
   .hero-subtitle {
-    font-size: 30px;
+    font-size: 17px;
+    line-height: 1.8;
   }
   .hero-description {
-    font-size: 16px;
+    font-size: 9px;
+    line-height: 2;
+  }
+  .hero .btn {
+    min-width: 140px;
+    padding: 11px 15px;
+    font-size: 8px;
   }
 }
-/* =========================
-   DIEN THOAI NHO
-   ========================= */
+/*-----------------------------------*\
+    #MOBILE NHỎ
+\*-----------------------------------*/
 @media (max-width: 450px) {
   .hero .img-box {
     width: 260px;
@@ -616,48 +651,18 @@ header .btn-group {
   }
   .hero .h1,
   .hero-title {
-    font-size: 30px;
+    font-size: 18px;
   }
   .hero .h3,
   .hero-subtitle {
-    font-size: 25px;
+    font-size: 14px;
+  }
+  .hero-description {
+    font-size: 8px;
   }
   .hero .btn {
-    min-width: 140px;
-    padding: 11px 18px;
-  }
-}
-/* =========================
-   RESPONSIVE
-   ========================= */
-@media (max-width: 900px) {
-  .hero .container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .hero .left {
-    max-width: 100%;
-  }
-  .hero .btn-group {
-    justify-content: center;
-  }
-  .hero .img-box {
-    width: 350px;
-    height: 350px;
-  }
-  .hero-img {
-    width: 350px;
-    height: 350px;
-  }
-}
-@media (max-width: 500px) {
-  .hero .img-box {
-    width: 280px;
-    height: 280px;
-  }
-  .hero-img {
-    width: 280px;
-    height: 280px;
+    min-width: 120px;
+    font-size: 7px;
   }
 }
 /*-----------------------------------*\ 
