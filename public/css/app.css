@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*-----------------------------------*\ 
   #style.css
 \*-----------------------------------*/
@@ -352,16 +351,39 @@ header .btn-group {
     #HERO
 \*-----------------------------------*/
 .hero {
+  position: relative;
+  background: var(--background-primary);
   padding-top: 4rem;
   padding-bottom: 4rem;
   text-align: left;
-  background: var(--background-primary);
+  overflow: hidden;
+}
+
+/* =========================
+   PATTERN BAO QUANH HERO
+   ========================= */
+.hero .pattern-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  background: url(/img/img/pattern.png);
+  background-size: 900px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.12;
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* =========================
    CONTAINER
    ========================= */
 .hero .container {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -372,15 +394,16 @@ header .btn-group {
 }
 
 /* =========================
-   PHAN CHU
+   PHAN CHU BEN TRAI
    ========================= */
 .hero .left {
   max-width: 650px;
 }
 
 /* Tieu de */
+.hero .h1,
 .hero-title {
-  margin: 0 0 20px 0;
+  margin-bottom: 1rem;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.35;
@@ -388,15 +411,21 @@ header .btn-group {
 }
 
 /* Ten */
+.hero b,
+.hero-title span {
+  color: var(--accent);
+  font-weight: inherit;
+}
+
 .hero-title span {
   display: block;
-  color: var(--accent);
   margin-top: 5px;
 }
 
 /* Tieu de phu */
+.hero .h3,
 .hero-subtitle {
-  margin: 0 0 20px 0;
+  margin-bottom: 2rem;
   font-size: 40px;
   font-weight: 700;
   line-height: 1.5;
@@ -405,7 +434,7 @@ header .btn-group {
 
 /* Mo ta */
 .hero-description {
-  margin: 0 0 30px 0;
+  margin-bottom: 30px;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.6;
@@ -419,8 +448,9 @@ header .btn-group {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 15px;
   flex-wrap: wrap;
+  gap: 15px;
+  text-align: center;
 }
 
 .hero .btn {
@@ -433,12 +463,12 @@ header .btn-group {
   font-size: 16px;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 }
 
 /* Nut lien he */
 .hero .btn-primary {
-  color: white;
+  color: #fff;
   background: var(--accent);
   border: 2px solid var(--accent);
 }
@@ -461,7 +491,7 @@ header .btn-group {
 }
 
 /* =========================
-   PHAN HINH
+   PHAN HINH BEN PHAI
    ========================= */
 .hero .right {
   position: relative;
@@ -497,14 +527,8 @@ header .btn-group {
 }
 
 /* =========================
-   BO TOAN BO PHAN TRANG TRI CU
+   BO PHAN KHOANH / SHAPE CU
    ========================= */
-/*
-    KHONG CHO .shape HIEN THI
-    => BO DUONG KHOANH DEN
-    => BO VONG TRON THUA
-    => BO PHAN BOX-SHADOW
-*/
 .hero .shape,
 .hero .shape-1,
 .hero .shape-2 {
@@ -512,22 +536,97 @@ header .btn-group {
 }
 
 /* =========================
-   HÌNH NỀN HỌA TIẾT
+   TABLET
    ========================= */
-.hero .pattern-bg {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  height: 200px;
-  background: url(/img/img/pattern.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.2;
-  z-index: 1;
+@media (max-width: 1000px) {
+  .hero .container {
+    gap: 30px;
+  }
+  .hero .img-box {
+    width: 350px;
+    height: 350px;
+  }
+  .hero-img {
+    width: 350px;
+    height: 350px;
+  }
+  .hero .h1,
+  .hero-title {
+    font-size: 42px;
+  }
+  .hero .h3,
+  .hero-subtitle {
+    font-size: 34px;
+  }
 }
-
+/* =========================
+   MOBILE
+   ========================= */
+@media (max-width: 750px) {
+  .hero {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-align: center;
+  }
+  .hero .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 20px;
+  }
+  .hero .left {
+    max-width: 100%;
+  }
+  .hero .btn-group {
+    justify-content: center;
+  }
+  .hero .right {
+    min-height: 320px;
+  }
+  .hero .img-box {
+    width: 300px;
+    height: 300px;
+  }
+  .hero-img {
+    width: 300px;
+    height: 300px;
+  }
+  .hero .h1,
+  .hero-title {
+    font-size: 36px;
+  }
+  .hero .h3,
+  .hero-subtitle {
+    font-size: 30px;
+  }
+  .hero-description {
+    font-size: 16px;
+  }
+}
+/* =========================
+   DIEN THOAI NHO
+   ========================= */
+@media (max-width: 450px) {
+  .hero .img-box {
+    width: 260px;
+    height: 260px;
+  }
+  .hero-img {
+    width: 260px;
+    height: 260px;
+  }
+  .hero .h1,
+  .hero-title {
+    font-size: 30px;
+  }
+  .hero .h3,
+  .hero-subtitle {
+    font-size: 25px;
+  }
+  .hero .btn {
+    min-width: 140px;
+    padding: 11px 18px;
+  }
+}
 /* =========================
    RESPONSIVE
    ========================= */
