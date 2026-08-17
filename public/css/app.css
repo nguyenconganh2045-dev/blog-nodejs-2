@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*-----------------------------------*\
     #FONT PIXEL
 \*-----------------------------------*/
@@ -399,60 +398,61 @@ header .btn-group {
 }
 
 /*-----------------------------------*\
-    #PHẦN CHỮ
+    #PHAN CHU
 \*-----------------------------------*/
 .hero .left {
   max-width: 650px;
 }
 
 /*-----------------------------------*\
-    #TIÊU ĐỀ
+    #TIEU DE
 \*-----------------------------------*/
 .hero .h1,
 .hero-title {
-  margin: 0 0 20px 0;
+  margin: 0 0 15px 0;
   font-family: "Press Start 2P", monospace;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: normal;
-  line-height: 1.8;
-  letter-spacing: 1px;
+  line-height: 1.7;
+  letter-spacing: 0.5px;
   color: var(--foreground-primary);
 }
 
-/* Tên */
+/* Ten */
 .hero b,
 .hero-title span {
   display: block;
-  margin-top: 10px;
+  margin-top: 5px;
   font-family: "Press Start 2P", monospace;
+  font-size: inherit;
   color: var(--accent);
   font-weight: normal;
 }
 
 /*-----------------------------------*\
-    #TIÊU ĐỀ PHỤ
+    #TIEU DE PHU
 \*-----------------------------------*/
 .hero .h3,
 .hero-subtitle {
-  margin: 0 0 25px 0;
+  margin: 0 0 20px 0;
   font-family: "Press Start 2P", monospace;
-  font-size: 23px;
+  font-size: 17px;
   font-weight: normal;
   line-height: 1.8;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: var(--foreground-primary);
 }
 
 /*-----------------------------------*\
-    #MÔ TẢ
+    #MO TA
 \*-----------------------------------*/
 .hero-description {
-  margin: 0 0 30px 0;
+  margin: 0 0 25px 0;
   font-family: "Press Start 2P", monospace;
-  font-size: 11px;
+  font-size: 9px;
   font-weight: normal;
   line-height: 2;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   color: var(--foreground-secondary);
 }
 
@@ -467,25 +467,22 @@ header .btn-group {
   gap: 15px;
 }
 
-/* Button chung */
 .hero .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 160px;
-  padding: 13px 22px;
+  min-width: 140px;
+  padding: 11px 18px;
   border-radius: 30px;
   font-family: "Press Start 2P", monospace;
-  font-size: 10px;
+  font-size: 8px;
   font-weight: normal;
   line-height: 1.5;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
-/*-----------------------------------*\
-    #BUTTON LIÊN HỆ
-\*-----------------------------------*/
+/* Nut lien he */
 .hero .btn-primary {
   color: #ffffff;
   background: var(--accent);
@@ -494,12 +491,10 @@ header .btn-group {
 
 .hero .btn-primary:hover {
   opacity: 0.85;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
-/*-----------------------------------*\
-    #BUTTON GIỚI THIỆU
-\*-----------------------------------*/
+/* Nut gioi thieu */
 .hero .btn-outline {
   color: var(--foreground-secondary);
   background: transparent;
@@ -508,11 +503,11 @@ header .btn-group {
 
 .hero .btn-outline:hover {
   background: #f1f4f8;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 /*-----------------------------------*\
-    #PHẦN HÌNH
+    #PHAN HINH
 \*-----------------------------------*/
 .hero .right {
   position: relative;
@@ -522,9 +517,7 @@ header .btn-group {
   min-height: 450px;
 }
 
-/*-----------------------------------*\
-    #KHUNG ẢNH
-\*-----------------------------------*/
+/* Khung anh */
 .hero .img-box {
   position: relative;
   width: 420px;
@@ -536,7 +529,7 @@ header .btn-group {
 }
 
 /*-----------------------------------*\
-    #ẢNH MINECRAFT HÌNH TRÒN
+    #ANH MINECRAFT HINH TRON
 \*-----------------------------------*/
 .hero-img {
   display: block;
@@ -550,12 +543,8 @@ header .btn-group {
 }
 
 /*-----------------------------------*\
-    #BỎ PHẦN KHOANH TRÒN CŨ
+    #BO PHAN KHOANH TRON CU
 \*-----------------------------------*/
-/*
-   Xóa toàn bộ hình shape cũ.
-   Không còn đường khoanh màu đen.
-*/
 .hero .shape,
 .hero .shape-1,
 .hero .shape-2 {
@@ -571,11 +560,11 @@ header .btn-group {
   }
   .hero .h1,
   .hero-title {
-    font-size: 27px;
+    font-size: 21px;
   }
   .hero .h3,
   .hero-subtitle {
-    font-size: 19px;
+    font-size: 15px;
   }
   .hero .img-box {
     width: 350px;
@@ -587,7 +576,7 @@ header .btn-group {
   }
 }
 /*-----------------------------------*\
-    #RESPONSIVE MOBILE
+    #MOBILE
 \*-----------------------------------*/
 @media (max-width: 750px) {
   .hero {
@@ -597,7 +586,7 @@ header .btn-group {
   }
   .hero .container {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 35px;
     padding: 0 20px;
   }
   .hero .left {
@@ -619,26 +608,23 @@ header .btn-group {
   }
   .hero .h1,
   .hero-title {
-    font-size: 22px;
-    line-height: 1.8;
+    font-size: 18px;
   }
   .hero .h3,
   .hero-subtitle {
-    font-size: 17px;
-    line-height: 1.8;
+    font-size: 14px;
   }
   .hero-description {
-    font-size: 9px;
-    line-height: 2;
+    font-size: 8px;
   }
   .hero .btn {
-    min-width: 140px;
-    padding: 11px 15px;
-    font-size: 8px;
+    min-width: 120px;
+    padding: 10px 14px;
+    font-size: 7px;
   }
 }
 /*-----------------------------------*\
-    #MOBILE NHỎ
+    #MOBILE NHO
 \*-----------------------------------*/
 @media (max-width: 450px) {
   .hero .img-box {
@@ -651,18 +637,18 @@ header .btn-group {
   }
   .hero .h1,
   .hero-title {
-    font-size: 18px;
+    font-size: 16px;
   }
   .hero .h3,
   .hero-subtitle {
-    font-size: 14px;
+    font-size: 12px;
   }
   .hero-description {
-    font-size: 8px;
+    font-size: 7px;
   }
   .hero .btn {
-    min-width: 120px;
-    font-size: 7px;
+    min-width: 110px;
+    font-size: 6px;
   }
 }
 /*-----------------------------------*\ 
