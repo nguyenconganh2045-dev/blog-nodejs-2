@@ -10,7 +10,7 @@
 
         <!-- MINECRAFT LOGO -->
         <image
-            href="/img/minecraft-logo.png"
+            href="minecraft-logo.png"
             x="5"
             y="5"
             width="85"
