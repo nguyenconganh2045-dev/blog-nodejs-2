@@ -1,10 +1,21 @@
-<div class="mt-5">
-    <h2 class="h2">Tìm kiếm bài viết</h2>
+<div class="mt-5 p-4 bg-light rounded shadow-sm">
+    <h2 class="h2 mb-3">Tìm kiếm bài viết</h2>
     <form action="/search" method="GET" class="mt-4">
         <div class="form-group">
-            <label for="search-input">Từ khóa</label>
-            <input type="text" name="q" class="form-control" id="search-input" placeholder="Nhập từ khóa...">
+            <label for="search-input" class="font-weight-bold">
+                Từ khóa
+            </label>
+            <input
+                type="text"
+                name="q"
+                class="form-control"
+                id="search-input"
+                placeholder="Nhập tên bài viết hoặc từ khóa..."
+                autocomplete="off"
+            >
         </div>
-        <button type="submit" class="btn btn-primary mt-2">Tìm kiếm</button>
+        <button type="submit" class="btn btn-primary mt-2">
+            🔍 Tìm kiếm
+        </button>
     </form>
 </div>
