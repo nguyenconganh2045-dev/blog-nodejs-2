@@ -1,33 +1,35 @@
 <div class="mt-5 p-4 bg-light rounded shadow-sm">
-    <h2 class="h2 mb-3">Tìm kiếm bài viết</h2>
-    <form action="/search" method="GET" class="mt-4">
-        <div class="form-group">
-            <label for="search-input" class="font-weight-bold">
-                Từ khóa
-            </label>
-            <input
-                type="text"
-                name="q"
-                class="form-control"
-                id="search-input"
-                placeholder="Nhập tên bài viết hoặc từ khóa..."
-                autocomplete="off"
-            >
-        </div>
-        <div class="form-group mt-3">
-            <label for="search-type">Tìm kiếm theo</label>
+    <div style="background-color: #a8a8a8;">
+        <h2 class="h2 mb-3">Tìm kiếm bài viết</h2>
+        <form action="/search" method="GET" class="mt-4">
+            <div class="form-group">
+                <label for="search-input" class="font-weight-bold">
+                    Từ khóa
+                </label>
+                <input
+                    type="text"
+                    name="q"
+                    class="form-control"
+                    id="search-input"
+                    placeholder="Nhập tên bài viết hoặc từ khóa..."
+                    autocomplete="off"
+                >
+            </div>
+            <div class="form-group mt-3">
+                <label for="search-type">Tìm kiếm theo</label>
 
-            <select
-                name="type"
-                id="search-type"
-                class="form-control"
-            >
-                <option value="post">Bài viết</option>
-                <option value="author">Tác giả</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary mt-2">
-            🔍 Tìm kiếm
-        </button>
-    </form>
+                <select
+                    name="type"
+                    id="search-type"
+                    class="form-control"
+                >
+                    <option value="post">Bài viết</option>
+                    <option value="author">Tác giả</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">
+                🔍 Tìm kiếm
+            </button>
+        </form>
+    </div>
 </div>
